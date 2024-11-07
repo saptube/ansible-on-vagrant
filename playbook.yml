@@ -1,0 +1,6 @@
+---
+- name: Test Ansible verbinding met Alpine hosts
+  hosts: all
+  tasks:
+    - name: Ping elke host
+      ping:
