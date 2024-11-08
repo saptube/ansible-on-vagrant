@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
       end
 
       # Map de huidige directory naar /vagrant in de VM
-      controller.vm.synced_folder ".", "/vagrant", type: "virtualbox", owner: "vagrant", group: "vagrant"
+      controller.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
       # Provisioning om Ansible te installeren en de sleutels te kopiëren
       controller.vm.provision "shell", inline: <<-SHELL

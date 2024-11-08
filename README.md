@@ -1,32 +1,44 @@
-Ansible on Vagrant
-==================
+🤖 Ansible on Vagrant
+=====================
 
 This repo will demonstrate how to setup a small environment to **get you started** developing with **Ansible**.
 
-We will create one ansible controller and 4 linux hosts. The linux version used is called **alpine**. Why? Because this is a very small distro. It has an iso of less than 100MB.
+We will create one ansible controller and 4 linux hosts. We are using **alpine** linux. Why? Because this is a very **small distro**. It has an iso 📀 of less than 100MB.
 
-We use Vagrant from Hashicorp to interact with the hypervisor. In our example this is VirtualBox.
+The hypervisor is VirtualBox. We use Vagrant from Hashicorp to interact and create virtual machines.
 
-Logging into vm
+![virtual machines diagram](assets/overview.png "virtual machines diagram")
+
+The diagram shows what the `Vagrantfile` contains.
+
+Getting started
 ---------------
+1. Download, install and start virtual box.
+   Link: https://www.virtualbox.org/wiki/Downloads
+2. Download and install vagrant.
+   Link: https://developer.hashicorp.com/vagrant/install
+3. Clone this git repo to some directory.
+   `git clone https://github.com/saptube/ansible-on-vagrant.git`
+3. Go into the cloned folder.
+  `cd ansible-on-vagrant`
+4. Build and start the virtual machines
+  `vagrant up`
+
+Take a look 👀. You now have 5 virtual machines 👊.
+
+**log into the ansible_controller virtual machine**
 
 You can use `vagrant ssh-config` to see the available keys and the ports to use.
 
-In our example we will log into the ansible controller using:
+In this example ssh on the controller is listening on port 2222. This port is shown during innition or you can request i with command `vagrant ssh`
 
-`ssh vagrant@localhost -p 2222 -i id_rsa`
+Log into the ansible controller: `ssh vagrant@localhost -p 2222`. The default user is **vagrant** and this is the password as well.
 
-Running playbook
-----------------
+**running the first playbook**
 
-You are now ready to start running your first playbook.
+You are logged on to the **ansible_controller**. You can start the playbook.
 
-```
-# login using password
-ssh vagrant@localhost -p 2222
-```
-
-When you are in the machine now, you can start the playbook.
+We start the playbook from the `/vagrant` folder. This folder is "mounted"/"available" on each virtual machine.
 
 ```
 # switch direcotry
@@ -36,7 +48,11 @@ cd /vagrant
 ansible-playbook -i inventory.ini playbook.yml
 ```
 
+License
+---------
+MIT
+
 Copyright
 ---------
 
-(C) 2024 saptube
+© 2024 SAL CONSULTANCY - saptube
