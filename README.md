@@ -24,7 +24,11 @@ Getting started
 4. Build and start the virtual machines
   `vagrant up`
 
-Take a look 👀. You now have 5 virtual machines 👊.
+Take a look 👀. You now have 4 virtual machines 👊.
+
+ **Youtube video**
+ The steps above are also shown in the video:
+ https://youtu.be/2sDxyLlqhCE
 
 **log into the ansible_controller virtual machine**
 
@@ -55,4 +59,4 @@ MIT
 Copyright
 ---------
 
-© 2024 SAL CONSULTANCY - saptube
+© 2025 SAL CONSULTANCY - saptube

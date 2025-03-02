@@ -1,0 +1,9 @@
+---
+
+# playbook_ping.yml
+
+- name: Test Ansible connection with hosts
+  hosts: all
+  tasks:
+    - name: Ping elke host
+      ping:
